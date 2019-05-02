@@ -31,9 +31,26 @@
         <input type="range" min="0" max="100" v-model="radius">
         <div v-if="ok">v-if条件による描画</div>
         <div v-show="ok">v-showによる表示</div>
+        <template v-if="ok">
+            <header>タイトル</header>
+            <div>コンテンツ</div>
+        </template>
+        <div v-if="type === 'A'">
+            type は A
+        </div>
+        <div v-else-if="type === 'B'">
+            type は B
+        </div>
+        <div v-else-if="type === 1">
+            type は 1
+        </div>
+        <div v-else>
+            すべての条件を満たさなかった
+        </div>
+
         <pre>{{ $data }} </pre>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <script src="vue.js"></script>
     <script src="main.js"></script>
 </body>
 </html>

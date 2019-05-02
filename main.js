@@ -11,7 +11,8 @@ var app = new Vue({
         state: state,
         count: 0,
         radius: 50,
-        ok: false
+        ok: false,
+        type: 1
 
     },
     methods: {
