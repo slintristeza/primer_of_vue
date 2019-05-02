@@ -10,7 +10,8 @@ var app = new Vue({
         show2: true,
         state: state,
         count: 0,
-        radius: 50
+        radius: 50,
+        ok: false
 
     },
     methods: {
