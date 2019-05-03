@@ -54,8 +54,8 @@
             loading now...
         </div>
         <ul>
-            <li v-for="item in list" v-bind:key="item.id">
-                ID.{{ item.id }} {{item.name }} HP.{{ item.hp }}
+            <li v-for="(item, index) in monsterList" v-bind:key="item.id">
+                INDEX:{{ index }} ID.{{ item.id }} {{item.name }} HP.{{ item.hp }}
             </li>
         </ul>
 
