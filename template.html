@@ -53,6 +53,11 @@
         <div v-else key="content-loading">
             loading now...
         </div>
+        <ul>
+            <li v-for="item in list" v-bind:key="item.id">
+                ID.{{ item.id }} {{item.name }} HP.{{ item.hp }}
+            </li>
+        </ul>
 
         <pre>{{ $data }} </pre>
     </div>
