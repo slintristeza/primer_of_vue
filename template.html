@@ -58,6 +58,14 @@
                 INDEX:{{ index }} ID.{{ item.id }} {{item.name }} HP.{{ item.hp }}
             </li>
         </ul>
+        <ul>
+            <li v-for="item in monsterList"
+                v-bind:key="item.id"
+                v-bind:class="{ tuyoi: item.hp > 300 }">
+                ID.{{ item.id }} {{ item.name }} HP.{{ item.hp }}
+                <span v-if="item.hp > 300">つよい！</span> 
+            </li>
+        </ul>
 
         <pre>{{ $data }} </pre>
     </div>
