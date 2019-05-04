@@ -54,8 +54,11 @@
             loading now...
         </div>
         <ul>
-            <li v-for="(item, index) in monsterList" v-bind:key="item.id">
+            <!-- li内のv-ifによりHPが0になるとリストから削除 -->
+            <li v-for="(item, index) in monsterList" v-bind:key="item.id" v-if="item.hp">
+                <span v-if="item.hp < 50">瀕死！</span>
                 INDEX:{{ index }} ID.{{ item.id }} {{item.name }} HP.{{ item.hp }}
+                <button v-on:click="doAttack(index)">モンスターを攻撃</button>
                 <button v-on:click="doRemove(index)">モンスターを削除</button>
             </li>
         </ul>

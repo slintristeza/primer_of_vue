@@ -21,6 +21,13 @@ var app = new Vue({
         ],
         monsterInputName: ""
     },
+    created: function() {
+        // リストの全要素にactiveプロパティを追加
+        this.monsterList.forEach(function(item) {
+            // item.active = false　ではリアクティブにならない
+            this.$set(item, 'active', false)
+        }, this)
+    },
     methods: {
         handleClick: function(event) {
             alert(event.target)
@@ -46,6 +53,9 @@ var app = new Vue({
         },
         changeSlime: function(){
             this.$set(this.monsterList, 0, { id: 1, name: 'キングスライム', hp: 500 })
+        },
+        doAttack: function(index) {
+            this.monsterList[index].hp -= 10
         }
     },
     mounted: function() {
