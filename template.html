@@ -80,10 +80,16 @@
         名前<input v-model="monsterInputName">
         <button v-on:click="doAdd">モンスターを追加</button>
         <button v-on:click="changeSlime">スライム変化</button>
+        <br>
+        <span v-for="item in 15">{{ item }} </span>
+        <br>
+        <span v-for="item in [1, 5, 10, 15]">{{ item }} </span>
 
         <pre>{{ $data }} </pre>
     </div>
     <script src="vue.js"></script>
     <script src="main.js"></script>
+    <script src="axios.js"></script>
+    <script src="lodash.js"></script>
 </body>
 </html>
