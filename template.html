@@ -8,7 +8,7 @@
 <body>
     
     <div id="app">
-        <p v-if="show">{{ message }}</p>
+        <p v-if="show" ref="message">{{ message }}</p>
         <input v-model="message">
         <ol>
             <li v-for="item in list">{{ item }}</li>
@@ -84,12 +84,17 @@
         <span v-for="item in 15">{{ item }} </span>
         <br>
         <span v-for="item in [1, 5, 10, 15]">{{ item }} </span>
+        <br>
+
+        <button v-on:click="increment2_11">カウントを増やす</button>
+        <button v-on:click="show2_11=!show2_11">表示/非表示</button>
+        <span ref="count" v-if="show2_11">0</span>
 
         <pre>{{ $data }} </pre>
     </div>
-    <script src="vue.js"></script>
-    <script src="main.js"></script>
     <script src="axios.js"></script>
     <script src="lodash.js"></script>
+    <script src="vue.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>

@@ -19,7 +19,8 @@ var app = new Vue({
             { id: 2, name: 'ゴブリン', hp:200 },
             { id: 3, name: 'ドラゴン', hp:500}
         ],
-        monsterInputName: ""
+        monsterInputName: "",
+        show2_11: true
     },
     created: function() {
         // リストの全要素にactiveプロパティを追加
@@ -34,6 +35,12 @@ var app = new Vue({
         },
         increment: function() {
             this.count ++
+        },
+        increment2_11() {
+            var count = this.$refs.count
+            if (count) {
+                count.innerText = parseInt(count.innerText,10) + 1
+            }
         },
         // 追加ボタンクリック時のハンドラ
         doAdd: function() {
@@ -60,6 +67,8 @@ var app = new Vue({
     },
     mounted: function() {
         this.scroll = 100
+        console.log(this.$el)
+        console.log(this.$refs.message)
     }
 })
 state.count++
