@@ -84,11 +84,19 @@
         <span v-for="item in 15">{{ item }} </span>
         <br>
         <span v-for="item in [1, 5, 10, 15]">{{ item }} </span>
-        <br>
+        <p>
 
         <button v-on:click="increment2_11">カウントを増やす</button>
         <button v-on:click="show2_11=!show2_11">表示/非表示</button>
         <span ref="count" v-if="show2_11">0</span>
+        <p>
+
+        <div v-if="toggle">
+            A <input type="text" key="a">
+        </div>
+        <div v-else>
+            B <input type="text" key="b">
+        </div>
 
         <pre>{{ $data }} </pre>
     </div>

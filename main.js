@@ -20,7 +20,9 @@ var app = new Vue({
             { id: 3, name: 'ドラゴン', hp:500}
         ],
         monsterInputName: "",
-        show2_11: true
+        show2_11: true,
+        url: "https://jp.vuejs.org/",
+        toggle: true
     },
     created: function() {
         // リストの全要素にactiveプロパティを追加
