@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue.js App</title>
+    <link href="section13.css" rel="stylesheet">
+</head>
+<body>
+    
+    <div id="app">
+        <button v-on:click="handleClick">クリック</button>
+        <p>{{ count }}</p>
+        <button v-on:click="count++">カウント</button>
+        <br>
+        <img src="cat.jpg" v-on:load="show=true" v-bind:class="{hide: !show}">
+        <div v-on:scroll="handlerScloll">
+            コンテンツ
+        </div>
+        <div v-on:mousewheel="handlerMouseWheel">
+            コンテンツ
+        </div>
+        <div v-on:dragstart="handlerDragStart">
+            <img src="cat.jpg" v-on:load="show=true" v-bind:class="{hide: !show}">
+        </div>
+        <input 
+    </div>
+    <script src="axios.js"></script>
+    <script src="lodash.js"></script>
+    <script src="vue.js"></script>
+    <script src="section13.js"></script>
+</body>
+</html>
