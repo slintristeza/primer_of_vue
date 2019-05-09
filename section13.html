@@ -16,13 +16,39 @@
         <div v-on:scroll="handlerScloll">
             コンテンツ
         </div>
-        <div v-on:mousewheel="handlerMouseWheel">
+        <div v-on:mousewheel.once="handlerMouseWheel">
             コンテンツ
         </div>
         <div v-on:dragstart="handlerDragStart">
             <img src="cat.jpg" v-on:load="show=true" v-bind:class="{hide: !show}">
         </div>
-        <input 
+        <input v-bind:value="message" v-on:input="handleInput">
+        <div v-on:click="handler('div1')">
+            div1
+            <!-- stopを利用する事でバブリングを制御-->
+            <a href="#top" v-on:click.stop="handler('div2')">div2</a>
+        </div>
+        <div v-on:click="handler('div1')">
+            div1
+            <!-- preventでもとの処理をキャンセル-->
+            <a href="#top" v-on:click.prevent="handler('div2')">div2</a>
+        </div>
+        <!-- キャプチャモードでのイベント発生-->
+        <div v-on:click.capture="handler('div1')">
+            div1
+            <div v-on:click="handler('div2')">
+                div2
+                <div v-on:click="handler('div3')">div3</div>
+            </div>
+        </div>
+        <div class="overray" v-on:click.self="close">...</div>
+        <input v-on:keydown.13="handler">
+        <input v-on:keydown.enter="handler">
+        <br>
+        <input v-on:keydown.up.down.left.right="handler">
+        <br>
+        <button v-on:keydown.shift="doDelete">削除ボタン</button>
+
     </div>
     <script src="axios.js"></script>
     <script src="lodash.js"></script>

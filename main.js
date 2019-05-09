@@ -60,6 +60,7 @@ var app = new Vue({
         doRemove: function(index) {
             this.monsterList.splice(index, 1)
         },
+        
         changeSlime: function(){
             this.$set(this.monsterList, 0, { id: 1, name: 'キングスライム', hp: 500 })
         },
