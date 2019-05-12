@@ -8,7 +8,44 @@
 <body>
     <div id="app">
         <input v-model="message">
+        <textarea v-model="message"></textarea>
         <p>{{ message }}</p>
+        <label>
+            <input type="checkbox" v-model="val" true-value="yes" false-value="no"> {{ val }}
+        </label>
+        <br>
+        <label><input type="checkbox" v-model="valArray" value="A"> A</label>
+        <label><input type="checkbox" v-model="valArray" value="B"> B</label>
+        <label><input type="checkbox" v-model="valArray" value="C"> C</label>
+        <br>
+        <label><input type="radio" value="a" v-model="valRadio"> A</label>
+        <label><input type="radio" value="b" v-model="valRadio"> B</label>
+        <label><input type="radio" value="c" v-model="valRadio"> C</label>
+        <br>
+        <select v-model="valSelect">
+            <option disabled="disabled">選択してください</option>
+            <option value="a">A</option>
+            <option value="b">B</option>
+            <option value="c">C</option>
+        </select>
+        <br>
+        <select v-model="valSelectArray" multiple>
+            <option disabled="disabled">選択してください</option>
+            <option value="a">A</option>
+            <option value="b">B</option>
+            <option value="c">C</option>
+        </select>
+        <br>
+        <input type="file" v-on:change="handleChange">
+        <div v-if="preview"><img v-bind:src="preview"></div>
+        <br>
+        <input type="range" v-model.number="valRange"> {{ valRange }}
+        <br>
+        <input type="text" v-model.number.trim="price"> {{ price }}
+        <br>
+        <input type="text" v-model.lazy="text"> {{ text }}
+
+        <pre>{{ $data }} </pre>
     </div>
     <script src="axios.js"></script>
     <script src="lodash.js"></script>
