@@ -4,3 +4,7 @@
 .v-enter, .v-leave-to {
     opacity: 0;
 }
+
+.heightAdjustment {
+    height: 1000px;
+}
