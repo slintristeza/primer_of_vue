@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue.js App</title>
+    <link href="main.css" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <p>{{ width }} の半分は {{ halfWidth }}</p>
+        <button v-on:click="handleClick">コンソールに表示</button>
+        <p>X: {{ halfPoint.x }}</p>
+        <p>Y: {{ halfPoint.y }}</p>
+        <input v-model.number="width"> {{ width }}
+        <input v-model.number="halfWidth"> {{ halfWidth }}
+        <!-- 算出プロパティ -->
+        <ol>
+            <li>{{ computedData }}</li>
+            <li>{{ computedData }}</li>
+        </ol>
+        <!-- メソッド -->
+        <ol>
+            <li>{{ methodsData() }}</li>
+            <li>{{ methodsData() }}</li>
+        </ol>
+        <input v-model.number="budget">円以下に絞り込む
+        <input v-model.number="limit">件を表示
+        <p>{{ matched.length }} 件中 {{ filteredList.length }} 件を表示中</p>
+        <button v-on:click="order=!order">切り替え</button>
+        <ul>
+            <!-- v-forでは最終結果、算出プロパティのlimitedを使用する -->
+            <li v-for="item in filteredList" v-bind:key="item.id">
+                {{ item.name }} {{ item.price }}円
+            </li>
+        </ul>
+    </div>
+    <script src="axios.js"></script>
+    <script src="lodash.js"></script>
+    <script src="vue.js"></script>
+    <script src="section16.js"></script>
+</body>
+</html>
