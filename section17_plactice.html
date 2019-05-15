@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue.js App</title>
+    <link href="main.css" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <select v-model="current">
+            <option v-for="topic in topics" v-bind:value="topic.value">
+                {{ topic.name }}
+            </option>
+        </select>
+        <div v-for="item in list">{{ item.full_name }}</div>
+    </div>
+    <script src="axios.js"></script>
+    <script src="lodash.js"></script>
+    <script src="vue.js"></script>
+    <script src="section17_plactice.js"></script>
+</body>
+</html>
