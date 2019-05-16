@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue.js App</title>
+    <link href="main.css" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        {{ price | localeNum }}円
+        <p>
+        {{ message | filter(foo, 100)}}
+        <p>
+        180度は {{ 180 | radian | round }} ラジアン
+    </div>
+    <script src="axios.js"></script>
+    <script src="lodash.js"></script>
+    <script src="vue.js"></script>
+    <script src="section18.js"></script>
+</body>
+</html>
