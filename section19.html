@@ -7,7 +7,15 @@
 </head>
 <body>
     <div id="app">
-
+        <input v-focus>
+        <br>
+        <button v-on:click="video1=true">再生</button>
+        <button v-on:click="video1=false">停止</button>
+        <video src="birth.mp4" v-video="video1"></video>
+        <br>
+        <button v-on:click="video2=true">再生</button>
+        <button v-on:click="video2=false">停止</button>
+        <video src="birth.mp4" v-video="video2"></video>
     </div>
     <script src="axios.js"></script>
     <script src="lodash.js"></script>
