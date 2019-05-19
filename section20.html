@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue.js App</title>
+    <link href="main.css" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <button v-on:click="list.push(list.length+1)">追加</button>
+        <ul ref="list">
+            <li v-for="item in list">{{ item }}</li>
+        </ul>
+    </div>
+    <script src="axios.js"></script>
+    <script src="lodash.js"></script>
+    <script src="vue.js"></script>
+    <script src="section20.js"></script>
+</body>
+</html>
