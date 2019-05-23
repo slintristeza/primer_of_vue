@@ -14,11 +14,17 @@
         <comp-child v-bind:val="message" class="item"></comp-child>
         <comp-child-over-ride id="parenrt" class='parent'></comp-child-over-ride>
         <ul>
-            <comp-child-list v-for="item in list"
+            <comp-child-list-selfish-attack v-for="item in list"
                 v-bind:key="item.id"
                 v-bind:name="item.name"
-                v-bind:hp="item.hp"></comp-child-list>
+                v-bind:hp="item.hp"></comp-child-list-selfish-attack>
         </ul>
+        <ul>
+            <comp-child-list v-for="item in list"
+                v-bind:key="item.id" v-bind="item"
+                @attack="handleAttack"></comp-child-list>
+        </ul>
+        <comp-child @childs-event="parentsMethod($event, parentsData)"></comp-child>
     </div>
     <script src="axios.js"></script>
     <script src="lodash.js"></script>
