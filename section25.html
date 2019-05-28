@@ -7,11 +7,14 @@
 </head>
 <body>
     <div id="app">
-
+        <my-component 
+        v-bind:name.sync="name" 
+        v-bind:hp.sync="hp"></my-component>
     </div>
     <script src="axios.js"></script>
     <script src="lodash.js"></script>
     <script src="vue.js"></script>
+    <script src="section25_child.js"></script>
     <script src="section25.js"></script>
 </body>
 </html>
