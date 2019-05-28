@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue.js App</title>
+    <link href="main.css" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <button @click="current^=1">toggle</button>
+        <div v-bind:is="component"></div>
+
+        <button @click="boardCurrent='comp-board'">メッセージ一覧</button>
+        <button @click="boardCurrent='comp-form'">投稿フォーム</button>
+        <keep-alive>
+                <div v-bind:is="boardCurrent"></div>
+        </keep-alive>
+    </div>
+    <script src="axios.js"></script>
+    <script src="lodash.js"></script>
+    <script src="vue.js"></script>
+    <script src="section27_component.js"></script>
+    <script src="section27.js"></script>
+</body>
+</html>
