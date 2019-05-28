@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue.js App</title>
+    <link href="section28.css" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <p><button @click="show=!show">切り替え</button></p>
+        <transition appear name="demo">
+            <div v-show="show">トランジションさせたい要素</div>
+        </transition>
+    </div>
+    <script src="axios.js"></script>
+    <script src="lodash.js"></script>
+    <script src="vue.js"></script>
+    <script src="section28.js"></script>
+</body>
+</html>
