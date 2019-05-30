@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue.js App</title>
+    <link href="section30.css" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <button @click="order=!order">切り替え</button>
+        <transition-group class="list" tag="ul">
+            <li v-for="fruits in sortedList" v-bind:key="fruits.id">
+                {{ fruits.name }} {{ fruits.price }}円
+            </li>
+        </transition-group>
+        <p>
+            <button @click="doShuffle">シャッフル</button>
+            <button @click="doAdd">追加</button>
+        </p>
+        <transition-group tag="ul" class="listNumber">
+            <li v-for="(item, index) in listNumber"
+                v-bind:key="item"
+                class="item"
+                @click="doRemove(index)">{{ item }}</li>
+        </transition-group>
+    </div>
+    <script src="axios.js"></script>
+    <script src="lodash.js"></script>
+    <script src="vue.js"></script>
+    <script src="section30.js"></script>
+</body>
+</html>
