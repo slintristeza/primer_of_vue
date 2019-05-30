@@ -17,7 +17,7 @@
             <button @click="doShuffle">シャッフル</button>
             <button @click="doAdd">追加</button>
         </p>
-        <transition-group tag="ul" class="listNumber">
+        <transition-group tag="ul" class="listNumber"  @before-leave="beforeLeave">
             <li v-for="(item, index) in listNumber"
                 v-bind:key="item"
                 class="item"
