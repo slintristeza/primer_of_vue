@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue.js App</title>
+    <link href="section31.css" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <button @click="toggle=!toggle">切り替え</button>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+            <transition>
+                <my-circle v-bind:fill="fill" v-bind:key="fill"></my-circle>
+            </transition>
+        </svg>
+    </div>
+    <script src="axios.js"></script>
+    <script src="lodash.js"></script>
+    <script src="vue.js"></script>
+    <script src="section31.js"></script>
+</body>
+</html>
