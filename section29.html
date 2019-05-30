@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue.js App</title>
+    <link href="section29.css" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <p><button @click="showCat=!showCat">猫の切り替え</button></p>
+        <transition>
+            <div v-show="showCat">
+                <img src="vue_cat.png">
+            </div>
+        </transition>
+        <p><button @click="showChar=!showChar">文字の切り替え</button></p>
+        <transition name="bad">
+            <div v-if="showChar" key="a">TRUE</div>
+            <div v-else key="b">False</div>
+        </transition>
+        <p><button @click="showChar2=!showChar2">文字の切り替え</button></p>
+        <transition name="better">
+            <div v-if="showChar2" key="a">TRUE</div>
+            <div v-else key="b">False</div>
+        </transition>
+        <p><button @click="showChar3=!showChar3">文字の切り替え</button></p>
+        <p>normal</p>
+        <transition>
+            <div v-if="showChar3" key="a">TRUE</div>
+            <div v-else key="b">False</div>
+        </transition>
+        <p>out-in</p>
+        <transition mode="out-in">
+            <div v-if="showChar3" key="a">TRUE</div>
+            <div v-else key="b">False</div>
+        </transition>
+        <p>in-out</p>
+        <transition mode="in-out">
+            <div v-if="showChar3" key="a">TRUE</div>
+            <div v-else key="b">False</div>
+        </transition>
+        <p><button @click="count++">切り替え</button></p>
+        <transition>
+            <div v-bind:key="count">{{ count }}</div>
+        </transition>
+    </div>
+    <script src="axios.js"></script>
+    <script src="lodash.js"></script>
+    <script src="vue.js"></script>
+    <script src="section29.js"></script>
+</body>
+</html>
