@@ -1,5 +1,9 @@
 Vue.component('my-component', {
-    template: '<div class="my-component"><p>名前.{{ name }} HP.{{ hp }}</p><p>名前 <input v-model="localName"></p><p>HP <input size="5" v-model.number="localHp"></p></div>',
+    template: `<div class="my-component">
+    <p>名前.{{ name }} HP.{{ hp }}</p>
+    <p>名前 <input v-model="localName"></p>
+    <p>HP <input size="5" v-model.number="localHp"></p>
+    </div>`,
     props: {
         name: String,
         hp: Number
