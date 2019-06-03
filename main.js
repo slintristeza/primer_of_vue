@@ -76,8 +76,57 @@ var app = new Vue({
 })
 state.count++
 
+// const array
 const array = [1, 2]
 array.push(3)
 console.log(array)
 array.length = 0
 console.log(array)
+
+// 分割代入
+const [a, b] = [1, 2]
+console.log(a)
+const { name } = { id: 1, name: 'りんご'}
+console.log(name)
+
+// スプレッド演算子
+const spreadArray = [1, 2, 3]
+console.log(spreadArray)
+const newArray = [...spreadArray, 4]
+console.log(newArray)
+
+// 配列メソッド
+const methodArray = [
+    { id: 1, name: 'hoge' },
+    { id: 2, name: 'fuga' }
+]
+const result = methodArray.find(el => el.id === 2)
+console.log(result)
+const resultIndex = methodArray.findIndex(el => el.id === 2)
+console.log(resultIndex)
+
+function myFunction(num) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (num < 10){
+                resolve('success')
+            } else {
+                reject('error!')
+            }    
+        }, 1000)
+    })
+}
+
+myFunction(100).then(value => {
+    console.log(value)
+}).catch(value => {
+    console.log(value)
+}).finally()
+
+myFunction(9).then(value => {
+    console.log(value)
+}).catch(value => {
+    console.log(value)
+}).finally({
+    
+})
