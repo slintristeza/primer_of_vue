@@ -24,18 +24,18 @@ var app = new Vue({
         url: "https://jp.vuejs.org/",
         toggle: true
     },
-    created: function() {
+    created() {
         // リストの全要素にactiveプロパティを追加
-        this.monsterList.forEach(function(item) {
+        this.monsterList.forEach(item => {
             // item.active = false　ではリアクティブにならない
             this.$set(item, 'active', false)
         }, this)
     },
     methods: {
-        handleClick: function(event) {
+        handleClick(event) {
             alert(event.target)
         },
-        increment: function() {
+        increment() {
             this.count ++
         },
         increment2_11() {
@@ -45,9 +45,9 @@ var app = new Vue({
             }
         },
         // 追加ボタンクリック時のハンドラ
-        doAdd: function() {
+        doAdd() {
             // リスト内で1番大きいIDを取得
-            var max =this.monsterList.reduce(function(a, b) {
+            var max =this.monsterList.reduce(a, b => {
                 return a > b.id ? a : b.id
             }, 0)
             // 新しいモンスターをリストに追加
@@ -57,21 +57,27 @@ var app = new Vue({
                 hp: 500
             })
         },
-        doRemove: function(index) {
+        doRemove(index) {
             this.monsterList.splice(index, 1)
         },
         
-        changeSlime: function(){
+        changeSlime(){
             this.$set(this.monsterList, 0, { id: 1, name: 'キングスライム', hp: 500 })
         },
-        doAttack: function(index) {
+        doAttack(index) {
             this.monsterList[index].hp -= 10
         }
     },
-    mounted: function() {
+    mounted() {
         this.scroll = 100
         console.log(this.$el)
         console.log(this.$refs.message)
     }
 })
 state.count++
+
+const array = [1, 2]
+array.push(3)
+console.log(array)
+array.length = 0
+console.log(array)
