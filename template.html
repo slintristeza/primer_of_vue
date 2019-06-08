@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue.js App</title>
+    <link href="main.css" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <p v-if="show">{{ message }}</p>
+        <input v-model="message">
+        <ol>
+            <li v-for="item in list">{{ item }}</li>
+        </ol>
+        <button v-on:click="handleClick">Click</button>
+        <br>
+        <button v-on:click="show2=!show2">切り替え</button>
+        <transition>
+            <p v-if="show2">hoge</p>
+        </transition>
+        <p>{{ list[2] }}</p>
+        <p>{{ list[num] }}</p>
+        <p>{{ count }} 回クリックしたよ！</p>
+        <button v-on:click="increment">カウントを増やす</button>
+        <div v-bind:text-content.prop="message"></div>
+        <div v-bind:scroll-top.prop="scroll"></div>
+        <svg xmlns="http://www.w3.org/2000/svg" veraion="1.1">
+            <circle cx="100" cy="75" v-bind:r="radius" fill="lightpink" />
+        </svg>
+        <input type="range" min="0" max="100" v-model="radius">
+        <pre>{{ $data }} </pre>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
